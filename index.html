@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
     content="Chhlav Phirom — Web Developer portfolio featuring web applications, responsive interfaces, APIs, databases, and modern web technologies."
   >
 
-  <meta name="theme-color" content="#f5f3ed">
+  <meta
+    name="theme-color"
+    content="#080e17"
+  >
 
   <title>Chhlav Phirom — Web Developer</title>
 
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
+
 
   <!-- Font Awesome -->
   <link
@@ -27,134 +43,277 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
-  <!-- Main stylesheet -->
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css">
+
 </head>
+
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+
+  <!-- ==========================================
+       HEADER
+  =========================================== -->
+
   <header class="site-header">
 
-    <a class="brand" href="#top" aria-label="Chhlav Phirom home">
-      <img src="assets/profile.png" alt="Chhlav Phirom">
-      <span>Chhlav Phirom</span>
-    </a>
+    <div class="header-inner">
 
-    <div class="header-actions">
 
-      <!-- Dark mode -->
-      <button
-        class="theme-btn"
-        type="button"
-        aria-label="Switch to dark mode"
-        title="Toggle dark mode"
+      <!-- Logo / Name -->
+
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Chhlav Phirom home"
       >
-        <i class="fa-solid fa-moon"></i>
-      </button>
 
-      <!-- Mobile menu -->
+        <img
+          src="assets/profile.png"
+          alt="Chhlav Phirom"
+        >
+
+        <span>
+          Chhlav Phirom
+        </span>
+
+      </a>
+
+
+      <!-- Menu Button -->
+
       <button
         class="menu-btn"
         type="button"
-        aria-label="Toggle navigation"
+        aria-label="Open menu"
         aria-expanded="false"
         aria-controls="primary-navigation"
       >
+
         <span></span>
         <span></span>
         <span></span>
+
       </button>
 
     </div>
 
-    <!-- Navigation -->
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
     <nav
       class="nav"
       id="primary-navigation"
       aria-label="Primary navigation"
     >
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+
+
+      <!-- Work -->
+
+      <a
+        href="#work"
+        class="nav-circle"
+        aria-label="Work"
+      >
+
+        <i class="fa-solid fa-list"></i>
+
+        <span>
+          Work
+        </span>
+
+      </a>
+
+
+      <!-- Skills -->
+
+      <a
+        href="#skills"
+        class="nav-circle"
+        aria-label="Skills"
+      >
+
+        <i class="fa-solid fa-code"></i>
+
+        <span>
+          Skills
+        </span>
+
+      </a>
+
+
+      <!-- Education -->
+
+      <a
+        href="#education"
+        class="nav-circle"
+        aria-label="Education"
+      >
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <span>
+          Education
+        </span>
+
+      </a>
+
+
+      <!-- Contact -->
+
+      <a
+        href="#contact"
+        class="nav-circle"
+        aria-label="Contact"
+      >
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <span>
+          Contact
+        </span>
+
+      </a>
+
+
+      <!-- Theme -->
+
+      <button
+        class="nav-circle theme-btn"
+        type="button"
+        aria-label="Switch to light mode"
+        title="Toggle theme"
+      >
+
+        <i class="fa-solid fa-sun"></i>
+
+        <span>
+          Theme
+        </span>
+
+      </button>
+
     </nav>
 
   </header>
 
 
+
+  <!-- ==========================================
+       MAIN
+  =========================================== -->
+
   <main id="top">
 
-    <!-- ================= HERO ================= -->
+
+    <!-- ==========================================
+         HERO
+    =========================================== -->
+
     <section class="hero container">
+
 
       <div class="eyebrow">
         WEB DEVELOPER
       </div>
 
+
       <h1>
-        Builds modern,<br>
-        responsive websites,<br>
-        user-friendly, and<br>
+        Builds modern,
+        responsive websites,
+        user-friendly, and
         digital experiences.
       </h1>
 
+
       <p class="lead">
-        Motivated Information Technology Engineering student interested in
-        web development and modern web technologies. Skilled in creating
-        responsive, user-friendly interfaces with a strong understanding
-        of UI/UX principles. Adaptable, responsible, and eager to gain
-        professional experience while contributing to real-world
-        technology projects.
+        Motivated Information Technology Engineering student
+        interested in web development and modern web technologies.
+        Skilled in creating responsive, user-friendly interfaces
+        with a strong understanding of UI/UX principles.
+        Adaptable, responsible, and eager to gain professional
+        experience while contributing to real-world technology
+        projects.
       </p>
 
+
+      <!-- Hero Buttons -->
+
       <div class="actions">
-        <a class="button primary" href="#work">
+
+        <a
+          class="button primary"
+          href="#work"
+        >
+          <i class="fa-solid fa-arrow-down"></i>
           View Work
         </a>
+
 
         <a
           class="button secondary"
           href="./chhlav-phirom-cv-2.pdf"
           download="chhlav-phirom-cv-2.pdf"
         >
+          <i class="fa-solid fa-file-arrow-down"></i>
           Download CV
         </a>
+
       </div>
 
 
-      <!-- Profile card -->
+      <!-- Profile Card -->
+
       <div class="profile-card">
+
 
         <img
           src="assets/profile.png"
           alt="Portrait of Chhlav Phirom"
         >
 
+
         <div class="focus-label">
           AVAILABLE FOCUS
         </div>
 
+
         <h2>
-          Frontend, Web Applications, and API Integration
+          Frontend, Web Applications,
+          and API Integration
         </h2>
+
 
         <div class="stats">
 
-          <div>
-            <strong>2</strong>
-            <span>Featured projects</span>
-          </div>
 
           <div>
             <strong>2</strong>
-            <span>Education tracks</span>
+            <span>
+              Featured projects
+            </span>
           </div>
+
+
+          <div>
+            <strong>2</strong>
+            <span>
+              Education tracks
+            </span>
+          </div>
+
 
           <div>
             <strong>1</strong>
-            <span>Native language</span>
+            <span>
+              Native language
+            </span>
           </div>
+
 
         </div>
 
@@ -163,12 +322,21 @@
     </section>
 
 
-    <!-- ================= WORK ================= -->
-    <section id="work" class="section container">
+
+    <!-- ==========================================
+         WORK
+    =========================================== -->
+
+    <section
+      id="work"
+      class="section container"
+    >
+
 
       <div class="section-kicker">
         PROJECT EXPERIENCE
       </div>
+
 
       <h2 class="section-title">
         Selected projects from the CV.
@@ -176,25 +344,42 @@
 
 
       <!-- Project 1 -->
+
       <article class="project-card">
 
-        <div class="project-meta">
-          University Review Site
-          <br>
-          <span>Team project</span>
+
+        <div class="project-top">
+
+          <div class="project-number">
+            01
+          </div>
+
+          <div class="project-meta">
+            University Review Site
+            <br>
+            <span>
+              Team project
+            </span>
+          </div>
+
         </div>
+
 
         <h3>
           Cambodia University Review
         </h3>
 
+
         <div class="project-subtitle">
           Frontend Development Project
         </div>
 
+
         <ul>
+
           <li>
-            University listings with logos, names, locations, and founding years.
+            University listings with logos,
+            names, locations, and founding years.
           </li>
 
           <li>
@@ -202,50 +387,75 @@
           </li>
 
           <li>
-            User-friendly navigation and homepage experience.
+            User-friendly navigation and
+            homepage experience.
           </li>
 
           <li>
-            About page explaining the platform's purpose.
+            About page explaining the
+            platform's purpose.
           </li>
+
         </ul>
 
       </article>
 
 
+
       <!-- Project 2 -->
+
       <article class="project-card">
 
-        <div class="project-meta">
-          Web Application
-          <br>
-          <span>Team project</span>
+
+        <div class="project-top">
+
+          <div class="project-number">
+            02
+          </div>
+
+          <div class="project-meta">
+            Web Application
+            <br>
+            <span>
+              Team project
+            </span>
+          </div>
+
         </div>
+
 
         <h3>
           Library Management System
         </h3>
 
+
         <div class="project-subtitle">
           Web Application Team Project
         </div>
 
+
         <ul>
+
           <li>
-            Managed library books, members, borrowing, and returning records.
+            Managed library books, members,
+            borrowing, and returning records.
           </li>
 
           <li>
-            Built interfaces for managing books and library users.
+            Built interfaces for managing
+            books and library users.
           </li>
 
           <li>
-            Implemented organized data management and search functionality.
+            Implemented organized data management
+            and search functionality.
           </li>
 
           <li>
-            Used Java, Spring Boot, and MySQL for application development.
+            Used Java, Spring Boot, and MySQL
+            for application development.
           </li>
+
         </ul>
 
       </article>
@@ -253,17 +463,28 @@
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
-    <section id="skills" class="section container">
+
+    <!-- ==========================================
+         SKILLS
+    =========================================== -->
+
+    <section
+      id="skills"
+      class="section container"
+    >
+
 
       <div class="section-kicker">
         TECHNICAL SKILLS
       </div>
 
+
       <h2 class="section-title">
-        Focused on building responsive interfaces, web applications,
-        APIs, databases, and user-friendly digital experiences.
+        Focused on building responsive interfaces,
+        web applications, APIs, databases,
+        and user-friendly digital experiences.
       </h2>
+
 
       <div class="tags">
 
@@ -290,21 +511,34 @@
     </section>
 
 
-    <!-- ================= EDUCATION ================= -->
-    <section id="education" class="section container">
+
+    <!-- ==========================================
+         EDUCATION
+    =========================================== -->
+
+    <section
+      id="education"
+      class="section container"
+    >
+
 
       <div class="section-kicker">
         EDUCATION
       </div>
 
+
       <div class="education-grid">
+
 
         <article class="edu-card">
 
-          <span>2022 — 2026</span>
+          <span>
+            2022 — 2026
+          </span>
 
           <h3>
-            Bachelor of Information Technology Engineering
+            Bachelor of Information
+            Technology Engineering
           </h3>
 
           <p>
@@ -316,7 +550,9 @@
 
         <article class="edu-card">
 
-          <span>2024</span>
+          <span>
+            2024
+          </span>
 
           <h3>
             AWS Cloud Architect
@@ -331,7 +567,9 @@
 
         <article class="edu-card">
 
-          <span>Ongoing</span>
+          <span>
+            Ongoing
+          </span>
 
           <h3>
             Full-Stack Development
@@ -343,6 +581,7 @@
 
         </article>
 
+
       </div>
 
     </section>
@@ -350,29 +589,42 @@
   </main>
 
 
-  <!-- ================= FOOTER / CONTACT ================= -->
-  <footer id="contact" class="footer">
+
+  <!-- ==========================================
+       FOOTER
+  =========================================== -->
+
+  <footer
+    id="contact"
+    class="footer"
+  >
 
     <div class="container">
+
 
       <div class="section-kicker">
         CONTACT
       </div>
 
+
       <h2>
-        Let's build something<br>
+        Let's build something
         dependable and useful.
       </h2>
 
+
       <p>
-        Based in Phnom Penh. Open to frontend, web design,
+        Based in Phnom Penh.
+        Open to frontend, web design,
         and IT support work.
       </p>
 
 
       <div class="socials">
 
+
         <!-- Email -->
+
         <a
           href="mailto:chhlavphirom2005@gmail.com"
           aria-label="Email Chhlav Phirom"
@@ -383,6 +635,7 @@
 
 
         <!-- Phone -->
+
         <a
           href="tel:+85511883877"
           aria-label="Call Chhlav Phirom"
@@ -393,6 +646,7 @@
 
 
         <!-- GitHub -->
+
         <a
           href="https://github.com/soujicode168"
           aria-label="GitHub"
@@ -405,6 +659,7 @@
 
 
         <!-- LinkedIn -->
+
         <a
           href="https://www.linkedin.com/in/chhlav-phirom-06551241b"
           aria-label="LinkedIn"
@@ -415,15 +670,25 @@
           <i class="fa-brands fa-linkedin-in"></i>
         </a>
 
+
       </div>
+
+
+      <div class="copyright">
+        © 2026 Chhlav Phirom. All rights reserved.
+      </div>
+
 
     </div>
 
   </footer>
 
 
+
   <!-- JavaScript -->
+
   <script src="script.js"></script>
 
 </body>
+
 </html>
