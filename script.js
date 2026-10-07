@@ -14,8 +14,8 @@ function downloadCV(event) {
   event.preventDefault();
 
   const link = document.createElement('a');
-  link.href = './cv.pdf';
-  link.download = 'cv.pdf';
+  link.href = './chhlav-phirom-cv-2.pdf';
+  link.download = 'chhlav-phirom-cv-2.pdf';
 
   document.body.appendChild(link);
   link.click();
