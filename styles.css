@@ -1031,3 +1031,122 @@ body.dark .theme-btn {
   border-color: rgba(255, 255, 255, 0.16);
   color: #ffffff;
 }
+
+/* LIQUID GLASS + COLORFUL BORDERS
+   HEADER AND MENU ONLY
+*/
+.site-header,
+.nav {
+  border: 1.5px solid transparent !important;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.58),
+      rgba(255, 255, 255, 0.38)
+    ) padding-box,
+    linear-gradient(
+      135deg,
+      #ff6384,
+      #ffad5c,
+      #f9df6d,
+      #4ed6a0,
+      #45b8f0,
+      #8585ff,
+      #d879e8
+    ) border-box !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+/* Menu buttons: keep subtle glass, no rainbow border */
+.nav-circle,
+.menu-btn,
+.theme-btn {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+/* Dark mode glass with colorful borders */
+body.dark .site-header,
+body.dark .nav {
+  background:
+    linear-gradient(
+      rgba(15, 22, 35, 0.78),
+      rgba(15, 22, 35, 0.58)
+    ) padding-box,
+    linear-gradient(
+      135deg,
+      #ff6384,
+      #ffad5c,
+      #f9df6d,
+      #4ed6a0,
+      #45b8f0,
+      #8585ff,
+      #d879e8
+    ) border-box !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+}
+body.dark .nav-circle,
+body.dark .menu-btn,
+body.dark .theme-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+/* HEADER — LIQUID GLASS ONLY */
+.site-header {
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+/* MENU — COLORFUL BORDERS */
+.nav-circle,
+.menu-btn,
+.theme-btn {
+  border: 1.5px solid transparent !important;
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    linear-gradient(
+      135deg,
+      #ff6384,
+      #ffad5c,
+      #f9df6d,
+      #4ed6a0,
+      #45b8f0,
+      #8585ff,
+      #d879e8
+    ) border-box !important;
+  color: var(--ink);
+}
+/* MENU PANEL — LIQUID GLASS */
+.nav {
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+/* DARK MODE HEADER AND MENU PANEL */
+body.dark .site-header,
+body.dark .nav {
+  background: rgba(15, 22, 35, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+/* DARK MODE COLORFUL MENU BUTTON BORDERS */
+body.dark .nav-circle,
+body.dark .menu-btn,
+body.dark .theme-btn {
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    linear-gradient(
+      135deg,
+      #ff6384,
+      #ffad5c,
+      #f9df6d,
+      #4ed6a0,
+      #45b8f0,
+      #8585ff,
+      #d879e8
+    ) border-box !important;
+  color: var(--ink);
+}
