@@ -1,334 +1,80 @@
-/* =====================================================
-   ELEMENTS
-===================================================== */
+// =====================================
+// MOBILE NAVIGATION
+// =====================================
 
-const menu = document.querySelector(".menu-btn");
-const nav = document.querySelector(".nav");
-const themeBtn = document.querySelector(".theme-btn");
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('.nav');
 
+menuBtn.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
 
-/* =====================================================
-   MENU
-===================================================== */
-
-function openMenu() {
-
-  if (!menu || !nav) {
-    return;
-  }
-
-  nav.classList.add("open");
-
-  menu.setAttribute(
-    "aria-expanded",
-    "true"
+  menuBtn.setAttribute('aria-expanded', isOpen);
+  menuBtn.setAttribute(
+    'aria-label',
+    isOpen ? 'Close menu' : 'Open menu'
   );
+});
 
-  menu.setAttribute(
-    "aria-label",
-    "Close menu"
-  );
-}
-
-
-function closeMenu() {
-
-  if (!menu || !nav) {
-    return;
-  }
-
-  nav.classList.remove("open");
-
-  menu.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  menu.setAttribute(
-    "aria-label",
-    "Open menu"
-  );
-}
-
-
-/* =====================================================
-   MENU BUTTON — ☰ / X
-===================================================== */
-
-if (menu && nav) {
-
-  menu.addEventListener("click", (event) => {
-
-    // Prevent the document click event
-    // from reopening/affecting the menu.
-    event.stopPropagation();
-
-    const isOpen =
-      nav.classList.contains("open");
-
-    if (isOpen) {
-
-      // X → CLOSE
-      closeMenu();
-
-    } else {
-
-      // ☰ → OPEN
-      openMenu();
-
-    }
-
+// Close menu after selecting a navigation link
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
   });
+});
 
 
-  /* ===================================================
-     NAVIGATION LINKS
-  =================================================== */
+// =====================================
+// DARK / LIGHT MODE
+// =====================================
 
-  document
-    .querySelectorAll(".nav a")
-    .forEach((link) => {
+const themeBtn = document.querySelector('.theme-btn');
+const themeIcon = themeBtn.querySelector('i');
+const themeLabel = themeBtn.querySelector('span');
 
-      link.addEventListener("click", () => {
+function setTheme(isDark) {
+  document.body.classList.toggle('dark', isDark);
 
-        closeMenu();
+  // Update icon
+  themeIcon.classList.toggle('fa-moon', !isDark);
+  themeIcon.classList.toggle('fa-sun', isDark);
 
-      });
+  // Update accessibility label
+  themeBtn.setAttribute(
+    'aria-label',
+    isDark ? 'Switch to light mode' : 'Switch to dark mode'
+  );
 
-    });
+  themeBtn.setAttribute(
+    'title',
+    isDark ? 'Switch to light mode' : 'Switch to dark mode'
+  );
 
-
-  /* ===================================================
-     CLICK INSIDE MENU
-  =================================================== */
-
-  nav.addEventListener("click", (event) => {
-
-    // Keep the menu open when clicking
-    // the theme button or other menu areas.
-    event.stopPropagation();
-
-  });
-
-
-  /* ===================================================
-     CLICK OUTSIDE MENU
-  =================================================== */
-
-  document.addEventListener("click", () => {
-
-    if (nav.classList.contains("open")) {
-
-      closeMenu();
-
-    }
-
-  });
-
-
-  /* ===================================================
-     ESC KEY
-  =================================================== */
-
-  document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-      closeMenu();
-
-    }
-
-  });
-
-}
-
-
-/* =====================================================
-   THEME BUTTON
-===================================================== */
-
-function updateThemeButton(isDark) {
-
-  if (!themeBtn) {
-    return;
+  if (themeLabel) {
+    themeLabel.textContent = 'Theme';
   }
 
-
-  if (isDark) {
-
-    themeBtn.innerHTML = `
-      <i class="fa-solid fa-sun"></i>
-      <span>Theme</span>
-    `;
-
-    themeBtn.setAttribute(
-      "aria-label",
-      "Switch to light mode"
-    );
-
-    themeBtn.setAttribute(
-      "title",
-      "Switch to light mode"
-    );
-
-  } else {
-
-    themeBtn.innerHTML = `
-      <i class="fa-solid fa-moon"></i>
-      <span>Theme</span>
-    `;
-
-    themeBtn.setAttribute(
-      "aria-label",
-      "Switch to dark mode"
-    );
-
-    themeBtn.setAttribute(
-      "title",
-      "Switch to dark mode"
-    );
-
+  // Remember selected theme
+  try {
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  } catch (error) {
+    // Theme still works if storage is unavailable
   }
-
 }
 
+// Load saved theme
+let savedTheme = 'light';
 
-/* =====================================================
-   BROWSER THEME COLOR
-===================================================== */
-
-function updateBrowserThemeColor(isDark) {
-
-  const themeColor =
-    document.querySelector(
-      'meta[name="theme-color"]'
-    );
-
-
-  if (!themeColor) {
-    return;
-  }
-
-
-  themeColor.setAttribute(
-    "content",
-    isDark
-      ? "#080e17"
-      : "#f5f3ed"
-  );
-
+try {
+  savedTheme = localStorage.getItem('theme') || 'light';
+} catch (error) {
+  // Use light mode by default
 }
 
+setTheme(savedTheme === 'dark');
 
-/* =====================================================
-   SET THEME
-===================================================== */
-
-function setTheme(theme) {
-
-  const isDark =
-    theme === "dark";
-
-
-  document.body.classList.toggle(
-    "dark-mode",
-    isDark
-  );
-
-
-  document.body.classList.toggle(
-    "light-mode",
-    !isDark
-  );
-
-
-  updateThemeButton(
-    isDark
-  );
-
-
-  updateBrowserThemeColor(
-    isDark
-  );
-
-
-  localStorage.setItem(
-    "theme",
-    isDark
-      ? "dark"
-      : "light"
-  );
-
-}
-
-
-/* =====================================================
-   LOAD SAVED THEME
-===================================================== */
-
-const savedTheme =
-  localStorage.getItem("theme");
-
-
-if (savedTheme === "light") {
-
-  setTheme("light");
-
-} else {
-
-  // Dark mode is the default.
-  setTheme("dark");
-
-}
-
-
-/* =====================================================
-   THEME CLICK
-===================================================== */
-
-if (themeBtn) {
-
-  themeBtn.addEventListener(
-    "click",
-    (event) => {
-
-      /*
-        IMPORTANT:
-
-        Stop the click from reaching the
-        document click handler.
-
-        This keeps the menu OPEN.
-      */
-      event.stopPropagation();
-
-
-      const isDark =
-        document.body.classList.contains(
-          "dark-mode"
-        );
-
-
-      setTheme(
-        isDark
-          ? "light"
-          : "dark"
-      );
-
-
-      /*
-        IMPORTANT:
-
-        There is NO closeMenu() here.
-
-        Therefore:
-
-        ☀️ → 🌙
-        changes the theme but keeps
-        the menu exactly where it is.
-      */
-
-    }
-  );
-
-}
+// Switch theme when clicked
+themeBtn.addEventListener('click', () => {
+  const isDark = !document.body.classList.contains('dark');
+  setTheme(isDark);
+});
